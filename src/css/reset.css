@@ -1,0 +1,22 @@
+/*
+seletor de tag::after
+p{}
+
+seletor de clase:
+.classe{}
+
+seletor universal:
+*{}
+
+seletor de descendente: 
+ul li{}
+*/
+
+
+
+*{
+    margin: 0; /*espaçamento externo*/
+    padding: 0; /*espaçamento interno para conteudo e bordas*/
+    box-sizing: border-box;
+}
+

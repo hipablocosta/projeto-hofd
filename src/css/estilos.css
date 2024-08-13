@@ -1,0 +1,105 @@
+body{
+    font-family: "Poppins", sans-serif; /*font para todo o body, e se não achar carregar sans serif*/
+    max-width: 1280px; /*tirar scroll*/
+    margin: 0 auto;
+}
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; /*eixo de profundidade, jogar para trás*/
+}
+
+.informacoes{
+    display: none;/*escondeu as divs*/
+}
+
+.informacoes.ativa{
+    display: block;
+}
+
+.conteudo{
+    display: flex; /*posicionar elemento mais fácil*/
+    flex-direction: column; /*tira a propriedade padrao e deixa a propriedade coluna*/
+    justify-content: space-evenly; /**/
+    min-height: 100vh;/*altura minima da janela do navegador*/
+}
+
+.informacoes h1{
+
+    font-size: 35px;
+    color: #ffffff;
+    margin-bottom: 80px; /*margem embaixo de 80px*/
+    font-family: "GOT";
+    letter-spacing: 8px;/*espaçamento entre as letras*/
+}
+
+@font-face {
+    font-family: "GOT";
+    src: url(../Fontes/GOT.ttf);
+}
+
+.informacoes .descricao{
+
+    width: 49%;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 40px; /*espaço da linha*/
+    height: 300px;
+    overflow: auto;/*criar scroll caso precisa*/
+    padding-right: 15px; /*desgrudar do scroll caso precise*/
+}
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center; /*justificando conteudo ao centro*/
+    gap: 20px; /*espaçamento entre os botoes*/
+}
+
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /*arredondar*/
+    border: 2px solid transparent; /*borda solida e transparente*/
+    cursor: pointer;
+    border-color: #ffffff;
+}
+
+.botoes-carrossel .botao.selecionado{
+    background-color: #1d8346; /*preencher botão slecionado com cor*/
+}
+
+.imagem{
+    width: 100vw; /*largura da tela do dispositivo*/
+    height: 100vh;
+    object-fit: cover;/*caber ou adequar na tela*/
+    display: none;
+}
+
+.imagem.ativa{
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarimagem{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+main:after{
+    content: ""; /*pseudo elemento (não existente no html)*/
+    min-height: 100vw;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%); 
+    z-index: -1;
+}
